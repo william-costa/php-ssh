@@ -2,6 +2,13 @@
 
 Simples gerenciador de conexões SSH em PHP utilizando a lib SSH2
 
+## Instalação
+
+Para instalar esta dependência basta executar o comando abaixo:
+```shell
+composer require william-costa/php-ssh
+```
+
 ## Utilização
 
 Para usar este gerenciador basta seguir o exemplo abaixo:
@@ -36,3 +43,4 @@ $obSSH->disconnect();
 
 ## Requisitos
 - Necessário PHP 7.0 ou superior
+- Necessário ter a lib SSH2 instalada e ativa
