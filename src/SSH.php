@@ -35,6 +35,18 @@ class SSH{
   }
 
   /**
+   * Método responsável por autenticar a conexão utilizando par de chaves SSH
+   * @param  string $user
+   * @param  string $publicKey
+   * @param  string $privateKey
+   * @param  string $passphrase
+   * @return boolean
+   */
+  public function authPublicKeyFile($user,$publicKey,$privateKey,$passphrase = null){
+    return $this->connection ? ssh2_auth_pubkey_file($this->connection,$user,$publicKey,$privateKey,$passphrase) : false;
+  }
+
+  /**
    * Método responsável por remover a conexão atual
    * @return boolean
    */

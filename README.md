@@ -27,8 +27,13 @@ if(!$obSSH->connect('172.17.0.1',2222)){
   die('Conexão falhou');
 }
 
-//AUTENTICAÇÃO
+//AUTENTICAÇÃO VIA USUÁRIO E SENHA
 if(!$obSSH->authPassword('wdev','123456')){
+  die('Autenticação falhou');
+}
+
+//AUTENTICAÇÃO VIA PAR DE CHAVES
+if(!$obSSH->authPublicKeyFile('wdev','chave_rsa.pub','chave_rsa.pem')){
   die('Autenticação falhou');
 }
 
